@@ -24,7 +24,17 @@ export default class DistrictRepository {
   }
 
   findAllMatches = (county)=>{
-    const keysArray = Object.keys(this.stats)
-    return keysArray
+    let upperCounty
+    if (!county) {
+      upperCounty = '';
+    } else {
+      upperCounty = county.toUpperCase();
+    }
+
+    const valuesArray = Object.values(this.stats)
+    
+    return valuesArray.filter((value)=>{
+      return value.location.includes(upperCounty)
+    });
   }
 }

@@ -22,4 +22,19 @@ export default class DistrictRepository {
       return this.stats[name.toUpperCase()]
     } 
   }
+
+  findAllMatches = (county)=>{
+    let upperCounty
+    if (!county) {
+      upperCounty = '';
+    } else {
+      upperCounty = county.toUpperCase();
+    }
+
+    const valuesArray = Object.values(this.stats)
+    
+    return valuesArray.filter((value)=>{
+      return value.location.includes(upperCounty)
+    });
+  }
 }

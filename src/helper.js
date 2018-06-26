@@ -22,4 +22,9 @@ export default class DistrictRepository {
       return this.stats[name.toUpperCase()]
     } 
   }
+
+  findAllMatches = (county)=>{
+    const keysArray = Object.keys(this.stats)
+    return keysArray
+  }
 }

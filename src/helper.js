@@ -6,7 +6,7 @@ export default class DistrictRepository {
       let key = yearObj.Location.toUpperCase();
       let stats = {};
       let year = yearObj.TimeFrame;
-      let data = yearObj.Data;
+      let data = parseFloat(parseFloat(yearObj.Data).toFixed(3)) || 0;
       if(!obj[key]) {
         obj[key] = {location: key,
                     stats: {}};

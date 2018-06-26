@@ -2,7 +2,10 @@ import kinderData from './data/kindergartners_in_full_day_program.js';
 
 export default class DistrictRepository {
   constructor(){
-    this.stats = kinderData.reduce((obj, yearObj) => {
+    this.stats = this.dataCleaner(kinderData);
+  }
+  dataCleaner = (data) => {
+    return data.reduce((obj, yearObj) => {
       let key = yearObj.Location.toUpperCase();
       let stats = {};
       let year = yearObj.TimeFrame;
@@ -14,6 +17,7 @@ export default class DistrictRepository {
       obj[key].stats[year] = data;
       return obj;
     }, {})
+
   }
   findByName = (name) => {
     if(!name) { return undefined };
@@ -22,19 +26,12 @@ export default class DistrictRepository {
       return this.stats[name.toUpperCase()]
     } 
   }
-
-  findAllMatches = (county)=>{
-    let upperCounty
-    if (!county) {
-      upperCounty = '';
-    } else {
-      upperCounty = county.toUpperCase();
-    }
-
+  findAllMatches = (county = '')=>{
+    county = county.toUpperCase();
     const valuesArray = Object.values(this.stats)
     
     return valuesArray.filter((value)=>{
-      return value.location.includes(upperCounty)
+      return value.location.includes(county)
     });
   }
 }

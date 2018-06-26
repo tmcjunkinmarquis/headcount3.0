@@ -9,13 +9,16 @@ class Form extends Component {
 
   }
 
-  handleChange = (e)=>{
-    console.log('poop');
+  handleChange = (e) => {
+    const value = e.target.value;
+    this.setState({
+      value
+    })
   }
 
   render(){
     return(
-      <div>
+      <form>
         <h1>Head Count Logo</h1>
         <input
           className='searchField' 
@@ -24,7 +27,7 @@ class Form extends Component {
           placeholder='Enter District'
           onChange={this.handleChange}
         />
-      </div>
+      </form>
     );
   }
 }

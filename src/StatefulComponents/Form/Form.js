@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       value: ''
     };
-
   }
 
   handleChange = (e) => {
@@ -16,9 +15,15 @@ class Form extends Component {
     })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    //debugger
+    this.props.selectDistrict(this.state.value);
+  }
+
   render(){
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h1>Head Count Logo</h1>
         <input
           className='searchField' 

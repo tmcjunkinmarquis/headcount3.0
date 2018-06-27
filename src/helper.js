@@ -25,11 +25,10 @@ export default class DistrictRepository {
     } 
   }
   findAllMatches = (county = '')=>{
-    county = county.toUpperCase();
     const valuesArray = Object.values(this.stats)
     
     return valuesArray.filter((value)=>{
-      return value.location.includes(county)
+      return value.location.includes(county.toUpperCase())
     });
   }
 }

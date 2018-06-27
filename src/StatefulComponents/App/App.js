@@ -9,6 +9,7 @@ import SelectedContainer from '../../StatelessComponents/SelectedContainer/Selec
 class App extends Component {
   constructor(props) {
     super(props);
+    this.districtRepo = new DistrictRepository();
     this.state = {
       selectedCards: [],
       allDistricts: [],
@@ -17,17 +18,26 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const districtRepo = new DistrictRepository();
-    const districts = Object.values(districtRepo.stats);
+    const districts = Object.values(this.districtRepo.stats);
 
     this.setState({allDistricts: districts});  
+  }
+
+  selectDistrict = (district) => {
+    const selected = this.districtRepo.findByName(district);
+
+    this.setState({
+      selectedCards: [...this.state.selectedCards, selected]
+    })
+
   }
 
   render() {
     return (
       <div>Welcome To Headcount 2.0
-        <Form />
-        {this.state.selectedCards.length && <SelectedContainer />}
+        <Form selectDistrict={this.selectDistrict}/>
+        {this.state.selectedCards.length && 
+          <SelectedContainer />}
         <CardContainer 
           allDistricts={this.state.allDistricts}/>
       </div>

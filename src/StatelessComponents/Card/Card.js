@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Card = ({ district }) => {
+const Card = (props) => {
 
   const generateList = (stats) => {
     const years = Object.keys(stats);
-    years.map(year => {
+    return years.map(year => {
       return (
         <li>{year}<span className="percent">{stats[year]}</span></li>
         )
@@ -13,10 +13,11 @@ const Card = ({ district }) => {
   }
 
   return(
+    
     <div>
-      <h5 className="district">Some District</h5>
+      <h5 className="district">{props.district.location}</h5>
       <ul>
-        {() => generateList(district.stats)}
+        {generateList(props.district.stats)}
       </ul>
     </div>
     )

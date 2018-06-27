@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from '../Form/Form';
+import MainContainer from '../../StatelessComponents/MainContainer/MainContainer';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div>Welcome To Headcount 2.0
         <Form />
-
+        <MainContainer />
       </div>
     );
   }

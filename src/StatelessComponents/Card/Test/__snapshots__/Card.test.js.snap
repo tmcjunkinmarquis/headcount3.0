@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match the snapshot 1`] = `
+exports[`Card should match a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <Card />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,31 +18,40 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "Welcome To Headcount 2.0",
-        <Form />,
-        <MainContainer />,
+        <h5
+          className="district"
+>
+          Some District
+</h5>,
+        <ul>
+          [Function]
+</ul>,
       ],
     },
     "ref": null,
     "rendered": Array [
-      "Welcome To Headcount 2.0",
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
+        "nodeType": "host",
+        "props": Object {
+          "children": "Some District",
+          "className": "district",
+        },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": "Some District",
+        "type": "h5",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
+        "nodeType": "host",
+        "props": Object {
+          "children": [Function],
+        },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": [Function],
+        "type": "ul",
       },
     ],
     "type": "div",
@@ -54,31 +63,40 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "Welcome To Headcount 2.0",
-          <Form />,
-          <MainContainer />,
+          <h5
+            className="district"
+>
+            Some District
+</h5>,
+          <ul>
+            [Function]
+</ul>,
         ],
       },
       "ref": null,
       "rendered": Array [
-        "Welcome To Headcount 2.0",
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
+          "nodeType": "host",
+          "props": Object {
+            "children": "Some District",
+            "className": "district",
+          },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": "Some District",
+          "type": "h5",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
+          "nodeType": "host",
+          "props": Object {
+            "children": [Function],
+          },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": [Function],
+          "type": "ul",
         },
       ],
       "type": "div",

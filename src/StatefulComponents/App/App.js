@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import DistrictRepository from '../../helper';
 import './App.css';
 import Form from '../Form/Form';
-import MainContainer from '../../StatelessComponents/MainContainer/MainContainer';
-import DistrictRepository from '../../helper';
+import CardContainer from '../../StatelessComponents/CardContainer/CardContainer';
+import SelectedContainer from '../../StatelessComponents/SelectedContainer/SelectedContainer';
 
 
 class App extends Component {
@@ -26,7 +27,8 @@ class App extends Component {
     return (
       <div>Welcome To Headcount 2.0
         <Form />
-        <MainContainer 
+        {this.state.selectedCards.length && <SelectedContainer />}
+        <CardContainer 
           allDistricts={this.state.allDistricts}/>
       </div>
     );

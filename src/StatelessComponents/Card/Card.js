@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Card.css';
 
 const Card = (props) => {
 
@@ -7,15 +8,17 @@ const Card = (props) => {
     const years = Object.keys(stats);
     return years.map(year => {
       return (
-        <li key={year}>{year}<span className="percent">{stats[year]}</span></li>
+        <li key={year}> <span className="year">{year}</span>
+          <span className="percent">
+            {stats[year]}
+          </span>
+        </li>
         )
     })
-
   }
 
   return(
-    
-    <div>
+    <div className="card">
       <h5 className="district">{props.district.location}</h5>
       <ul>
         {generateList(props.district.stats)}

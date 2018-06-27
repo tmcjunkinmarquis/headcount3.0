@@ -23,4 +23,4 @@ describe('DistrictRepository iteration 0', () =>  {
     expect(district.compareDistrictAverages('ACADEMY 20', 'Colorado')).toEqual(result);
   });
 
-});
+}); 

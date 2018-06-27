@@ -8,7 +8,7 @@ export default class DistrictRepository {
     return data.reduce((obj, yearObj) => {
       let key = yearObj.Location.toUpperCase();
       let year = yearObj.TimeFrame;
-      let data = parseFloat(parseFloat(yearObj.Data).toFixed(3)) || 0;
+      let data = Math.round(yearObj.Data * 1000)/1000 || 0;
       if(!obj[key]) {
         obj[key] = {location: key,
                     stats: {}};

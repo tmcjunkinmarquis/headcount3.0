@@ -1,0 +1,27 @@
+.card {
+  height: 300px;
+  width: 150px;
+  border: 1px solid blue;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 15%;
+}
+
+.card .year {
+  width: 50%;
+  text-align: right;
+  margin: auto 8px;
+}
+
+.card .percent {
+  width: 50%;
+  text-align: left;
+  margin: auto 8px;
+}
+
+.district {
+  text-align: center;
+}
+

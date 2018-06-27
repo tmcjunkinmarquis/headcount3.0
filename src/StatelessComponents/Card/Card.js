@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Card = (props) => {
 
@@ -6,7 +7,7 @@ const Card = (props) => {
     const years = Object.keys(stats);
     return years.map(year => {
       return (
-        <li>{year}<span className="percent">{stats[year]}</span></li>
+        <li key={year}>{year}<span className="percent">{stats[year]}</span></li>
         )
     })
 
@@ -21,6 +22,10 @@ const Card = (props) => {
       </ul>
     </div>
     )
+}
+
+Card.proptypes = {
+  stats: PropTypes.object.isRequired
 }
 
 export default Card;

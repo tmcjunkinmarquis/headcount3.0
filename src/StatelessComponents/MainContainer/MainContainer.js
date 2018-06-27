@@ -1,7 +1,6 @@
 import React from 'react';
-//import Card from '../Card/Card';
 import CardContainer from '../CardContainer/CardContainer';
-
+import PropTypes from 'prop-types';
 
 const MainContainer = (props) => {
   return (
@@ -10,6 +9,10 @@ const MainContainer = (props) => {
       <CardContainer {...props}/>
     </div>
     )
+}
+
+MainContainer.proptypes = {
+  props: PropTypes.object.isRequired
 }
 
 export default MainContainer;

@@ -37,7 +37,7 @@ class App extends Component {
       <div>Welcome To Headcount 2.0
         <Form selectDistrict={this.selectDistrict}/>
         {this.state.selectedCards.length && 
-          <SelectedContainer />}
+          <SelectedContainer selectedCards={this.state.selectedCards}/>}
         <CardContainer 
           allDistricts={this.state.allDistricts}/>
       </div>

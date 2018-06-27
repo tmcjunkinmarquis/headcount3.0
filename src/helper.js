@@ -22,7 +22,6 @@ export default class DistrictRepository {
     if(!name) { return undefined };
     if(this.stats[name.toUpperCase()]) {
       return this.stats[name.toUpperCase()];
-      //return this.stats[name.toUpperCase()]
     } 
   }
   findAllMatches = (county = '')=>{

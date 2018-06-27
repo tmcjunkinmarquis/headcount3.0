@@ -4,9 +4,14 @@
   border: 1px solid blue;
 }
 
+.district {
+  height: 20px;
+}
+
 .card ul {
   list-style: none;
   padding-left: 15%;
+  padding-right: 15%;
 }
 
 .card .year {
@@ -25,3 +30,6 @@
   text-align: center;
 }
 
+.low {
+  background-color: #f4aca8;
+}

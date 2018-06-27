@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({allDistricts}) => {
 
@@ -9,7 +10,7 @@ const CardContainer = ({allDistricts}) => {
       return (
         <Card 
           district={district}
-          key={Date.now()}/>
+          key={district.location}/>
       );
     });
   };
@@ -22,5 +23,9 @@ const CardContainer = ({allDistricts}) => {
     </div>
   );
 };
+
+CardContainer.proptypes = {
+  allDistricts: PropTypes.array.isRequired
+}
 
 export default CardContainer;

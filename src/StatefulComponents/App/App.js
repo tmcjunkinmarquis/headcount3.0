@@ -24,10 +24,24 @@ class App extends Component {
   }
 
   selectDistrict = (district) => {
+    const cards = this.state.selectedCards;
     const selected = this.districtRepo.findByName(district);
+    let isDuplicate = false;
+    cards.forEach(card => {
+      if( card.location === selected.location) { isDuplicate = true };
+    })
+
+    if(isDuplicate){ return }
+
+    if (cards.length <= 1) {
+      cards.push(selected)
+    } else {
+      cards.splice(1,1,selected);
+    }
+
 
     this.setState({
-      selectedCards: [...this.state.selectedCards, selected]
+      selectedCards: cards
     })
 
   }

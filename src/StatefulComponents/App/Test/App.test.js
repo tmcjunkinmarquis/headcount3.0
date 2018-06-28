@@ -28,8 +28,9 @@ describe('App',()=>{
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should instantiate with state having properties selectedCards, allCards, average', () => {
+  it.skip('should instantiate with state having properties selectedCards, allCards, average', () => {
     //Setup
+    
     const mockState = {
       selectedCards: [],
       allCards: [],
@@ -38,7 +39,7 @@ describe('App',()=>{
     
     //Execution
     //Expectation
-    expect(wrapper.instance().state).toEqual(mockState);
+    expect(wrapper.state()).toEqual(mockState);
     
   });
 

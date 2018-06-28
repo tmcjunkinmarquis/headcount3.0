@@ -4,10 +4,10 @@ import { shallow } from 'enzyme';
 import CardContainer from '../CardContainer';
 
 describe('CardContainer', () => {
-  let wrapper = shallow(<CardContainer />)
+  let wrapper = shallow(<CardContainer allDistricts={[]}/>);
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
-  it('should render ')
+  
 })

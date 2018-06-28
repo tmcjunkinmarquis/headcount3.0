@@ -1,9 +1,9 @@
 import React from 'react';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
-import './CardContainer.css'
+import './CardContainer.css';
 
-const CardContainer = ({allDistricts}) => {
+const CardContainer = ({ allDistricts }) => {
 
   const makeCards = (districts)=>{
 
@@ -27,6 +27,6 @@ const CardContainer = ({allDistricts}) => {
 
 CardContainer.proptypes = {
   allDistricts: PropTypes.array.isRequired
-}
+};
 
 export default CardContainer;

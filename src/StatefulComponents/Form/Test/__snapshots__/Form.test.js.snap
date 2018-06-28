@@ -29,6 +29,7 @@ ShallowWrapper {
           value=""
 />,
       ],
+      "onSubmit": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -59,7 +60,7 @@ ShallowWrapper {
         "type": "input",
       },
     ],
-    "type": "div",
+    "type": "form",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -79,6 +80,7 @@ ShallowWrapper {
             value=""
 />,
         ],
+        "onSubmit": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -109,7 +111,7 @@ ShallowWrapper {
           "type": "input",
         },
       ],
-      "type": "div",
+      "type": "form",
     },
   ],
   Symbol(enzyme.__options__): Object {

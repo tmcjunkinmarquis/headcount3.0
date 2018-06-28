@@ -28,28 +28,32 @@ class App extends Component {
     const selected = this.districtRepo.findByName(district);
     let isDuplicate = false;
     cards.forEach(card => {
-      if( card.location === selected.location) { isDuplicate = true };
-    })
+      if( card.location === selected.location) { isDuplicate = true; };
+    });
 
-    if(isDuplicate){ return }
+    if(isDuplicate){ return; }
 
     if (cards.length <= 1) {
-      cards.push(selected)
+      cards.push(selected);
     } else {
       cards.splice(1,1,selected);
     }
-
-
     this.setState({
       selectedCards: cards
-    })
-
+    });
   }
+
+  findFromSearch = (chars) => {
+    const allDistricts = this.districtRepo.findAllMatches(chars);
+    this.setState({ allDistricts });
+  };
 
   render() {
     return (
       <div>Welcome To Headcount 2.0
-        <Form selectDistrict={this.selectDistrict}/>
+        <Form 
+          selectDistrict={this.selectDistrict}
+          findFromSearch={this.findFromSearch}/>
         {this.state.selectedCards.length && 
           <SelectedContainer selectedCards={this.state.selectedCards}/>}
         <CardContainer 

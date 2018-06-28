@@ -12,13 +12,16 @@ class Form extends Component {
     const value = e.target.value;
     this.setState({
       value
-    })
+    });
+    this.props.findFromSearch(value);
+
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     //debugger
     this.props.selectDistrict(this.state.value);
+    this.setState({value: ''});
   }
 
   render(){

@@ -7,7 +7,7 @@ describe('', ()=>{
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Form />);
+    wrapper = shallow(<Form findFromSearch={jest.fn()}/>);
 
   });
 

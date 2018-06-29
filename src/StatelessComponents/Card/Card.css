@@ -1,11 +1,17 @@
 .card {
-  height: 300px;
+  height: 100%;
   width: 150px;
-  border: 1px solid blue;
+  border: 1px solid gray;
+  margin-bottom: 3%;
+  border-radius: 4%;
+  background-color: white;
+  color: #5D3A12;
+  box-shadow: 4px 3px darkgray;
 }
 
 .district {
   height: 20px;
+  color: #FF8F06;
 }
 
 .card ul {
@@ -30,6 +36,17 @@
   text-align: center;
 }
 
+.selected,
+.card:hover {
+  /*width: 160px;*/
+  box-shadow: 5px 7px #A6A29B;
+  transform: scale(1.05);
+  transition: all .2s ease-in-out;
+  /*height: 43vh;*/
+  font-size: 1em;
+  margin-top: -5px;
+}
+
 .low {
-  background-color: #f4aca8;
+  background-color: #C7F0F5;
 }

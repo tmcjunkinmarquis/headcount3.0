@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Form.css';
 
 class Form extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Form extends Component {
     //debugger
     this.props.selectDistrict(this.state.value);
     this.setState({value: ''});
+    this.props.findFromSearch('')
   }
 
   render(){

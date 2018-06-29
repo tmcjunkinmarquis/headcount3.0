@@ -54,8 +54,7 @@ class App extends Component {
         <Form 
           selectDistrict={this.selectDistrict}
           findFromSearch={this.findFromSearch}/>
-        {this.state.selectedCards.length && 
-          <SelectedContainer selectedCards={this.state.selectedCards}/>}
+        <SelectedContainer selectedCards={this.state.selectedCards}/>
         <CardContainer 
           allDistricts={this.state.allDistricts}/>
       </div>

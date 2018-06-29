@@ -20,6 +20,7 @@ ShallowWrapper {
       "children": Array [
         "Welcome To Headcount 2.0",
         <Form
+          findFromSearch={[Function]}
           selectDistrict={[Function]}
 />,
         0,
@@ -2935,6 +2936,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "findFromSearch": [Function],
           "selectDistrict": [Function],
         },
         "ref": null,
@@ -5862,6 +5864,7 @@ ShallowWrapper {
         "children": Array [
           "Welcome To Headcount 2.0",
           <Form
+            findFromSearch={[Function]}
             selectDistrict={[Function]}
 />,
           0,
@@ -8777,6 +8780,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "findFromSearch": [Function],
             "selectDistrict": [Function],
           },
           "ref": null,

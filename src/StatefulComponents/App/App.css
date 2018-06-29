@@ -1,1 +1,7 @@
-/*APP COMPONENT RELATED CSS GOES HERE*/
+body {
+  background-color: whitesmoke;
+}
+
+h1 {
+  color: #008A92;
+}

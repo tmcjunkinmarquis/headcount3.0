@@ -1,0 +1,5 @@
+.selected-container {
+  display: flex;
+  min-height:1px;
+  justify-content: space-around;
+}

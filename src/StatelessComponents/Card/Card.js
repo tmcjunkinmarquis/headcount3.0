@@ -18,8 +18,21 @@ const Card = (props) => {
     })
   }
 
+  const toggleSelected = (e) => {
+    const card = e.target.closest('.card');
+    card.classList.toggle('selected');
+    if(props.selected) { 
+      props.unselect(props.district.location);
+      return;
+    };
+    props.selectDistrict(props.district.location);
+  }
+
   return(
-    <div className="card">
+    <div 
+        onClick={toggleSelected} 
+        className="card"
+        >
       <h5 className="district">{props.district.location}</h5>
       <ul>
         {generateList(props.district.stats)}

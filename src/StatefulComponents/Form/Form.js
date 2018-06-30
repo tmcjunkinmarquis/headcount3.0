@@ -20,7 +20,7 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (!event.target.value) {
+    if (!this.state.value) {
       return;
     }
     this.props.selectDistrict(this.state.value);

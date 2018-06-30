@@ -3,3 +3,11 @@
   min-height:1px;
   justify-content: space-around;
 }
+.selected-container .card {
+  box-shadow: 7px 5px #A6A29B;
+  transform: scale(1.05);
+  transition: all .2s ease-in-out;
+  font-size: 1em;
+  border-width: 2px;
+  border-color: #FF8F06;
+}

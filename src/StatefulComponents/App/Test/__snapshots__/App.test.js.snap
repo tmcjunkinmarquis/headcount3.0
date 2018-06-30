@@ -18,12 +18,16 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "Welcome To Headcount 2.0",
         <Form
           findFromSearch={[Function]}
           selectDistrict={[Function]}
 />,
-        0,
+        <SelectedContainer
+          compareDistrictAverages={[Function]}
+          findAverage={[Function]}
+          selectedCards={Array []}
+          unselect={[Function]}
+/>,
         <CardContainer
           allDistricts={
                     Array [
@@ -2925,12 +2929,12 @@ ShallowWrapper {
                               },
                             ]
           }
+          selectDistrict={[Function]}
 />,
       ],
     },
     "ref": null,
     "rendered": Array [
-      "Welcome To Headcount 2.0",
       Object {
         "instance": null,
         "key": undefined,
@@ -2943,7 +2947,20 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      0,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "compareDistrictAverages": [Function],
+          "findAverage": [Function],
+          "selectedCards": Array [],
+          "unselect": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -5847,6 +5864,7 @@ ShallowWrapper {
               },
             },
           ],
+          "selectDistrict": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -5862,12 +5880,16 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "Welcome To Headcount 2.0",
           <Form
             findFromSearch={[Function]}
             selectDistrict={[Function]}
 />,
-          0,
+          <SelectedContainer
+            compareDistrictAverages={[Function]}
+            findAverage={[Function]}
+            selectedCards={Array []}
+            unselect={[Function]}
+/>,
           <CardContainer
             allDistricts={
                         Array [
@@ -8769,12 +8791,12 @@ ShallowWrapper {
                                     },
                                   ]
             }
+            selectDistrict={[Function]}
 />,
         ],
       },
       "ref": null,
       "rendered": Array [
-        "Welcome To Headcount 2.0",
         Object {
           "instance": null,
           "key": undefined,
@@ -8787,7 +8809,20 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        0,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "compareDistrictAverages": [Function],
+            "findAverage": [Function],
+            "selectedCards": Array [],
+            "unselect": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -11691,6 +11726,7 @@ ShallowWrapper {
                 },
               },
             ],
+            "selectDistrict": [Function],
           },
           "ref": null,
           "rendered": null,

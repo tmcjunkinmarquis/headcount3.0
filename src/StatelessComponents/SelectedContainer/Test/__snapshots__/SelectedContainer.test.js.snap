@@ -19,10 +19,19 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [],
+      "children": Array [
+        undefined,
+        false,
+        undefined,
+      ],
+      "className": "selected-container",
     },
     "ref": null,
-    "rendered": Array [],
+    "rendered": Array [
+      undefined,
+      false,
+      undefined,
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -31,10 +40,19 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [],
+        "children": Array [
+          undefined,
+          false,
+          undefined,
+        ],
+        "className": "selected-container",
       },
       "ref": null,
-      "rendered": Array [],
+      "rendered": Array [
+        undefined,
+        false,
+        undefined,
+      ],
       "type": "div",
     },
   ],

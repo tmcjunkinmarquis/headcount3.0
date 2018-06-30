@@ -14,15 +14,15 @@ const Card = (props) => {
             {stats[year]}
           </span>
         </li>
-        )
+      )
     })
   }
 
   const toggleSelected = (e) => {
-    const card = e.target.closest('.card');
-    card.classList.toggle('selected');
+  
     if(props.selected) { 
       props.unselect(props.district.location);
+      
       return;
     };
     props.selectDistrict(props.district.location);
@@ -30,15 +30,16 @@ const Card = (props) => {
 
   return(
     <div 
-        onClick={toggleSelected} 
-        className="card"
-        >
+      onClick={toggleSelected} 
+      className={`card ${props.selected? "selected": ""}`}
+      
+    >
       <h5 className="district">{props.district.location}</h5>
       <ul>
         {generateList(props.district.stats)}
       </ul>
     </div>
-    )
+  )
 }
 
 Card.proptypes = {

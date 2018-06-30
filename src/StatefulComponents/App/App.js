@@ -58,6 +58,8 @@ class App extends Component {
     this.setState({ allDistricts });
   };
 
+
+
   render() {
     return (
       <div>
@@ -73,6 +75,8 @@ class App extends Component {
         <CardContainer 
           allDistricts={this.state.allDistricts}
           selectDistrict={this.selectDistrict}
+          selectedCards={this.state.selectedCards}
+          unselect={this.unselect}
           />
       </div>
     );

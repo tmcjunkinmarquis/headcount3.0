@@ -3,7 +3,16 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 import './CardContainer.css';
 
-const CardContainer = ({ allDistricts, selectDistrict }) => {
+const CardContainer = ({ allDistricts, selectDistrict, selectedCards, unselect }) => {
+
+  const selectedNames = selectedCards.map(district=>{
+    return district.location;
+  });
+
+  const isSelected = district =>{
+    return selectedNames.includes(district.location)
+  }
+
 
   const makeCards = (districts)=>{
 
@@ -13,7 +22,8 @@ const CardContainer = ({ allDistricts, selectDistrict }) => {
           district={district}
           key={district.location}
           selectDistrict={selectDistrict}
-          selected={false}
+          selected={isSelected(district)}
+          unselect={unselect}
         />
       );
     });

@@ -5,7 +5,6 @@ import Form from '../Form/Form';
 import CardContainer from '../../StatelessComponents/CardContainer/CardContainer';
 import SelectedContainer from '../../StatelessComponents/SelectedContainer/SelectedContainer';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +12,7 @@ class App extends Component {
     this.state = {
       selectedCards: [],
       allDistricts: [],
-      average: null,
+      
     };
   }
 
@@ -58,14 +57,13 @@ class App extends Component {
     this.setState({ allDistricts });
   };
 
-
-
   render() {
     return (
       <div>
         <Form 
           selectDistrict={this.selectDistrict}
-          findFromSearch={this.findFromSearch}/>
+          findFromSearch={this.findFromSearch}
+          allDistricts={this.state.allDistricts}/>
         <SelectedContainer 
           unselect={this.unselect}
           selectedCards={this.state.selectedCards}

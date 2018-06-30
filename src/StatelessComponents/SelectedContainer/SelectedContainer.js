@@ -5,12 +5,12 @@ import './SelectedContainer.css'
 const SelectedContainer = ({ selectedCards, unselect, findAverage, compareDistrictAverages }) => {
   const showCards = (districts) => {
     return districts.map(district => (
-        <Card 
-          district={district} 
-          key={district.location}
-          selected={true}
-          unselect={unselect}
-        />)
+      <Card 
+        district={district} 
+        key={district.location}
+        selected={true}
+        unselect={unselect}
+      />)
     )
   }
 
@@ -27,17 +27,17 @@ const SelectedContainer = ({ selectedCards, unselect, findAverage, compareDistri
           <h4 className='comparison-value'>{comparisonObj.compared}</h4>
           <h5 className='comp-dist'>{nameB} : {comparisonObj[nameB]}</h5>
         </div>
-        )
-      }
+      )
     }
+  }
 
   return (
-      <div className='selected-container'>
-        {showCards(selectedCards)[0]}
-        {selectedCards.length === 2 && comparison()}
-        {showCards(selectedCards)[1]}
-      </div>
-    )
+    <div className='selected-container'>
+      {showCards(selectedCards)[0]}
+      {selectedCards.length === 2 && comparison()}
+      {showCards(selectedCards)[1]}
+    </div>
+  )
 }
 
 export default SelectedContainer;

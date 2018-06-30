@@ -33,7 +33,6 @@ export default class DistrictRepository {
   }
 
   findAverage = (district) => {
-    //district = {location: 'Colorado', stats{2004: 0.313, ...}}
     const statsArray = Object.values(this.stats[district].stats);
     const sum = statsArray.reduce((sum, percentage)=>{
       

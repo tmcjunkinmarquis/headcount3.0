@@ -67,6 +67,8 @@ class App extends Component {
         <SelectedContainer 
           unselect={this.unselect}
           selectedCards={this.state.selectedCards}
+          findAverage={this.districtRepo.findAverage}
+          compareDistrictAverages={this.districtRepo.compareDistrictAverages}
         />
         <CardContainer 
           allDistricts={this.state.allDistricts}

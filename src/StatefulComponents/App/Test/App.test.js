@@ -55,20 +55,26 @@ describe('App',()=>{
     expect(wrapper.state('selectedCards')).toEqual(expectedState);
   });
 
-  it('should not have duplicate cards in selectedCards array in state', () => {
+  it('should remove card from  selectedCards array in state if selected twice', () => {
     // setup
     const initialState = [];
     // execution
     wrapper.instance().selectDistrict('COLORADO');
     expect(wrapper.state('selectedCards').length).toEqual(1);
     wrapper.instance().selectDistrict('COLORADO');
-
+    
     // expectation
     expect(wrapper.state('selectedCards').length).toEqual(0);
-    wrapper.instance().selectDistrict('COLORADO');
+  });
 
-    expect(wrapper.state('selectedCards').length).toEqual(1);
-
+  it('should update the state when search characters are found', () => {
+    // setup
+    
+    //execution
+    expect(wrapper.state('allDistricts').length).toEqual(181)
+    wrapper.instance().findFromSearch('Colo')
+    //expect
+    expect(wrapper.state('allDistricts').length).toEqual(2)
   });
 
 });

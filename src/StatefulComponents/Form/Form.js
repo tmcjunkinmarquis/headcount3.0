@@ -19,20 +19,13 @@ class Form extends Component {
   }
 
   handleSubmit = (event) => {
-    
-    // debugger
     event.preventDefault();
     if (!event.target.value) {
-      return
+      return;
     }
-  
-    // if (this.props.allDistricts.length === 1 ) {
-    //   this.props.selectDistrict(this.props.allDistricts[0].location);
-    // }
-    
     this.props.selectDistrict(this.state.value);
     this.setState({value: ''});
-    this.props.findFromSearch('')
+    this.props.findFromSearch('');
 
   }
 

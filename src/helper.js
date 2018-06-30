@@ -28,8 +28,13 @@ export default class DistrictRepository {
     const valuesArray = Object.values(this.stats);
     
     return valuesArray.filter((value)=>{
-      return value.location.includes(county.toUpperCase());
+      return value.location.startsWith(county.toUpperCase());
     });
+
+    // return valuesArray.filter((value) => {
+    //   const regex = new RegExp(county.toUpperCase())
+    //   return value.location.match(regex);
+    // });
   }
 
   findAverage = (district) => {

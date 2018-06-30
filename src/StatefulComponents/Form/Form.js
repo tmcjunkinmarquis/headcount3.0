@@ -18,15 +18,26 @@ class Form extends Component {
 
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = (event) => {
+    
+    // debugger
+    event.preventDefault();
+    if (!event.target.value) {
+      return
+    }
+  
+    // if (this.props.allDistricts.length === 1 ) {
+    //   this.props.selectDistrict(this.props.allDistricts[0].location);
+    // }
+    
     this.props.selectDistrict(this.state.value);
     this.setState({value: ''});
     this.props.findFromSearch('')
+
   }
 
   render(){
-    return(
+    return (
       <form onSubmit={this.handleSubmit}>
         <h1>Head Count Logo</h1>
         <input

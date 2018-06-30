@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 import './CardContainer.css';
 
-const CardContainer = ({ allDistricts }) => {
+const CardContainer = ({ allDistricts, selectDistrict }) => {
 
   const makeCards = (districts)=>{
 
@@ -12,6 +12,8 @@ const CardContainer = ({ allDistricts }) => {
         <Card 
           district={district}
           key={district.location}
+          selectDistrict={selectDistrict}
+          selected={false}
         />
       );
     });

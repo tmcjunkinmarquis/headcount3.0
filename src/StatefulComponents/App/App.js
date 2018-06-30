@@ -31,7 +31,10 @@ class App extends Component {
       if( card.location === selected.location) { isDuplicate = true; };
     });
 
-    if(isDuplicate){ return; }
+    if (isDuplicate) { 
+      this.unselect(selected.location);
+      return 
+    }
 
     if (cards.length <= 1) {
       cards.push(selected);
@@ -43,6 +46,13 @@ class App extends Component {
     });
   }
 
+  unselect = (district) => {
+    const selectedCards = this.state.selectedCards.filter(card => card.location !== district );
+    this.setState({
+      selectedCards
+    })
+  }
+
   findFromSearch = (chars) => {
     const allDistricts = this.districtRepo.findAllMatches(chars);
     this.setState({ allDistricts });
@@ -50,13 +60,20 @@ class App extends Component {
 
   render() {
     return (
-      <div>Welcome To Headcount 2.0
+      <div>
         <Form 
           selectDistrict={this.selectDistrict}
           findFromSearch={this.findFromSearch}/>
-        <SelectedContainer selectedCards={this.state.selectedCards}/>
+        <SelectedContainer 
+          unselect={this.unselect}
+          selectedCards={this.state.selectedCards}
+          findAverage={this.districtRepo.findAverage}
+          compareDistrictAverages={this.districtRepo.compareDistrictAverages}
+        />
         <CardContainer 
-          allDistricts={this.state.allDistricts}/>
+          allDistricts={this.state.allDistricts}
+          selectDistrict={this.selectDistrict}
+          />
       </div>
     );
   }

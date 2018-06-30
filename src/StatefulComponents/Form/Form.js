@@ -20,7 +20,6 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    //debugger
     this.props.selectDistrict(this.state.value);
     this.setState({value: ''});
     this.props.findFromSearch('')

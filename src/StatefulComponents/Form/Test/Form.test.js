@@ -7,7 +7,9 @@ describe('', ()=>{
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Form findFromSearch={jest.fn()}/>);
+    wrapper = shallow(<Form findFromSearch={jest.fn()}
+                            selectDistrict={jest.fn()}
+                            />);
 
   });
 
@@ -63,22 +65,65 @@ describe('', ()=>{
     wrapper.find('form').simulate('submit', mockEvent);
     //expectation
     expect(spy).toHaveBeenCalled();
+
   });
 
   it('should call selectDistrict when handleSubmit is executed', () => {
-    const mockSelectDistrict = jest.fn();
-    wrapper = shallow(
+   const spy = jest.fn();
+   const wrapper = shallow(
+     <Form 
+       selectDistrict={spy}
+       findFromSearch={jest.fn()}
+       allDistricts={jest.fn()}
+     />)
+   wrapper.setState({
+     value: "COLORADO"
+   })
+   const mockEvent = {
+     preventDefault: jest.fn(),
+     target: {value: 'COLORADO'}
+   };
+
+   wrapper.find('form').simulate('submit', mockEvent);
+
+   expect(spy).toHaveBeenCalled();
+  });
+
+  it('should call selectDistrict with state.value onSubmit', () => {
+
+    const spy = jest.fn();
+    const wrapper = shallow(
       <Form 
-        selectDistrict= {mockSelectDistrict}
+        selectDistrict={spy}
         findFromSearch={jest.fn()}
         allDistricts={jest.fn()}
       />)
+    wrapper.setState({
+      value: "COLORADO"
+    })
     const mockEvent = {
       preventDefault: jest.fn(),
-      target: { value: 'Colorado' }
+      target: {value: 'COLORADO'}
     };
-    wrapper.instance().handleSubmit(mockEvent);
-    
-    expect(mockSelectDistrict).toHaveBeenCalled();
-  });
+
+    wrapper.find('form').simulate('submit', mockEvent);
+
+    expect(spy).toHaveBeenCalledWith('COLORADO');
+  })
+
+  it('should reset the state.value to empty string', () => {
+
+  })
+
+  it('should call findFromSearch with empty string onSubmit', () => {
+
+  })
+
 });
+
+
+
+
+
+
+

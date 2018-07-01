@@ -31,7 +31,7 @@ class Form extends Component {
 
   render(){
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="form"onSubmit={this.handleSubmit}>
         <h1>Head Count Logo</h1>
         <input
           className='searchField' 

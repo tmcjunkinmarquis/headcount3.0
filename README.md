@@ -4,6 +4,6 @@
 
 HeadCount 2.0 is a project designed to challenge our skills at manipulating data and creating small, reusable React components.  
 
-![HeadCount2.0](https://github.com/tmcjunkinmarquis/headcount3.0/screen-shot.png)
+![HeadCount2.0](/screen-shot.png)
 
 

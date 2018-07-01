@@ -36,7 +36,10 @@ const CardContainer = ({ allDistricts, selectDistrict, selectedCards, unselect }
 };
 
 CardContainer.proptypes = {
-  allDistricts: PropTypes.array.isRequired
+  allDistricts: PropTypes.array.isRequired,
+  selectDistrict: PropTypes.func.isRequired,
+  selectedCards: PropTypes.array.isRequired,
+  unselect: PropTypes.func.isRequired,
 };
 
 export default CardContainer;

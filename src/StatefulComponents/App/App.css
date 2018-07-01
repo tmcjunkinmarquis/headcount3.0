@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
+
 body {
   background-color: whitesmoke;
 }
 
 h1 {
   color: #008A92;
+  font-size: 3em;
+  font-family: 'Encode Sans Condensed', sans-serif;
 }

@@ -13,6 +13,9 @@ ShallowWrapper {
             },
           }
     }
+    selectDistrict={[Function]}
+    selected={false}
+    unselect={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

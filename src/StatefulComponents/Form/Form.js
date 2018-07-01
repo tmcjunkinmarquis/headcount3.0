@@ -20,18 +20,21 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (!this.state.value) {
-      return;
+    if(!this.props.allDistricts.length || !this.state.value) {
+      return
+    } else if (this.props.allDistricts.length === 1) {
+      this.props.selectDistrict(this.props.allDistricts[0].location);
+      return
+    } else if (this.props.findFromSearch(this.state.value)) {
+      this.props.selectDistrict(this.state.value);
+      this.setState({value: ''});
+      this.props.findFromSearch(''); 
     }
-    this.props.selectDistrict(this.state.value);
-    this.setState({value: ''});
-    this.props.findFromSearch('');
-
   }
 
   render(){
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="form"onSubmit={this.handleSubmit}>
         <h1>Head Count Logo</h1>
         <input
           className='searchField' 

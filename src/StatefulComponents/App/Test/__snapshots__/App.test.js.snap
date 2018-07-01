@@ -5829,6 +5829,7 @@ ShallowWrapper {
                               },
                             ]
           }
+          className="card-container"
           selectDistrict={[Function]}
           selectedCards={Array []}
           unselect={[Function]}
@@ -11664,6 +11665,7 @@ ShallowWrapper {
               },
             },
           ],
+          "className": "card-container",
           "selectDistrict": [Function],
           "selectedCards": Array [],
           "unselect": [Function],
@@ -17493,6 +17495,7 @@ ShallowWrapper {
                                     },
                                   ]
             }
+            className="card-container"
             selectDistrict={[Function]}
             selectedCards={Array []}
             unselect={[Function]}
@@ -23328,6 +23331,7 @@ ShallowWrapper {
                 },
               },
             ],
+            "className": "card-container",
             "selectDistrict": [Function],
             "selectedCards": Array [],
             "unselect": [Function],

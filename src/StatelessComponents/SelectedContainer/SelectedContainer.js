@@ -7,7 +7,7 @@ const SelectedContainer = ({ selectedCards, unselect, findAverage, compareDistri
     return districts.map(district => (
       <Card 
         district={district} 
-        key={district.location}
+        // {key={district.location || 'a'}}
         selected={true}
         unselect={unselect}
       />)

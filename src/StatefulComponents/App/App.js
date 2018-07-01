@@ -75,6 +75,7 @@ class App extends Component {
           selectDistrict={this.selectDistrict}
           selectedCards={this.state.selectedCards}
           unselect={this.unselect}
+          className="card-container"
           />
       </div>
     );

@@ -29,10 +29,8 @@ class Form extends Component {
       this.props.selectDistrict(districts[0].location);
       this.props.findFromSearch('');
       return;
-    } else if (
-      districts.filter(district => {
-        district.location === value.toUpperCase(); 
-      }).length) {
+    } else if (districts.filter(district => 
+      district.location === value.toUpperCase()).length) {
       this.props.selectDistrict(value);
       this.setState({value: ''});
       this.props.findFromSearch(''); 

@@ -34,7 +34,6 @@ class App extends Component {
       this.unselect(selected.location);
       return 
     }
-
     if (cards.length <= 1) {
       cards.push(selected);
     } else {

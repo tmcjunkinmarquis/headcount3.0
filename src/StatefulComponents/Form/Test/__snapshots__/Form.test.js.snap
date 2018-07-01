@@ -22,7 +22,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h1>
-          Head Count Logo
+          Head Count 2.0
 </h1>,
         <input
           className="searchField"
@@ -42,10 +42,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Head Count Logo",
+          "children": "Head Count 2.0",
         },
         "ref": null,
-        "rendered": "Head Count Logo",
+        "rendered": "Head Count 2.0",
         "type": "h1",
       },
       Object {
@@ -74,7 +74,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1>
-            Head Count Logo
+            Head Count 2.0
 </h1>,
           <input
             className="searchField"
@@ -94,10 +94,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Head Count Logo",
+            "children": "Head Count 2.0",
           },
           "ref": null,
-          "rendered": "Head Count Logo",
+          "rendered": "Head Count 2.0",
           "type": "h1",
         },
         Object {

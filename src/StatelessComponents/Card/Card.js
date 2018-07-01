@@ -30,7 +30,6 @@ const Card = (props) => {
     <div 
       onClick={toggleSelected} 
       className={`card ${props.selected? "selected": ""}`}
-      
     >
       <h5 className="district">{props.district.location}</h5>
       <ul>

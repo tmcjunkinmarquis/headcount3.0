@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import SelectedContainer from '../SelectedContainer';
 import DistrictRepository from '../../../helper';
-import { SSL_OP_CISCO_ANYCONNECT } from 'constants';
 
 describe('SelectedContainer', () => {
   let wrapper;

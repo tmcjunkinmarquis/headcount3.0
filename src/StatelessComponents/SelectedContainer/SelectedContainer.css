@@ -2,7 +2,10 @@
   display: flex;
   min-height:1px;
   justify-content: space-around;
+  color:#3d2613;
+  padding-bottom: 2%;
 }
+
 .selected-container .card {
   box-shadow: 7px 5px #A6A29B;
   transform: scale(1.05);
@@ -10,4 +13,25 @@
   font-size: 1em;
   border-width: 2px;
   border-color: #FF8F06;
+}
+
+.comp-dist {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.comparison-value {
+  font-size: 4.3em;
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (max-width: 580px) {
+  .selected-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .comparison-content {
+    order: -1;
+  }
 }

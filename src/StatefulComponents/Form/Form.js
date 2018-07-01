@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 
 class Form extends Component {
@@ -49,6 +50,12 @@ class Form extends Component {
       </form>
     );
   }
+}
+
+Form.proptypes = {
+  selectDistrict: PropTypes.func.isRequired,
+  findFromSearch: PropTypes.func.isRequired,
+  allDistricts: PropTypes.array.isRequired
 }
 
 export default Form;

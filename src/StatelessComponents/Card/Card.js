@@ -40,7 +40,11 @@ const Card = (props) => {
 }
 
 Card.proptypes = {
-  stats: PropTypes.object.isRequired
+  district: PropTypes.object.isRequired,
+  key: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
+  unselect: PropTypes.func.isRequired,
+  selectDistrict: PropTypes.func.isRequired
 }
 
 export default Card;

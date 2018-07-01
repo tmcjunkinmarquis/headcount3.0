@@ -9,6 +9,7 @@ describe('', ()=>{
   beforeEach(() => {
     wrapper = shallow(<Form findFromSearch={jest.fn()}
                             selectDistrict={jest.fn()}
+                            allDistricts={[]}
                             />);
 
   });
@@ -52,7 +53,7 @@ describe('', ()=>{
       <Form 
         selectDistrict={jest.fn()}
         findFromSearch={jest.fn()}
-        allDistricts={jest.fn()}
+        allDistricts={[]}
       />);
     const mockEvent = {
       preventDefault: jest.fn(),

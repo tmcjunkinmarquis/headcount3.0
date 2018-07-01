@@ -41,10 +41,9 @@ const Card = (props) => {
 
 Card.propTypes = {
   district: PropTypes.object.isRequired,
-  key: PropTypes.string.isRequired,
   selected: PropTypes.bool.isRequired,
   unselect: PropTypes.func.isRequired,
-  selectDistrict: PropTypes.func.isRequired
+  selectDistrict: PropTypes.func
 };
 
 export default Card;

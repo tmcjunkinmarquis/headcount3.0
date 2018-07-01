@@ -46,7 +46,7 @@ const SelectedContainer = ({
 
 SelectedContainer.propTypes = {
   unselect: PropTypes.func.isRequired,
-  selectedCards: PropTypes.func.isRequired,
+  selectedCards: PropTypes.array.isRequired,
   compareDistrictAverages: PropTypes.func.isRequired
 };
 

@@ -5,8 +5,28 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CardContainer
-    allDistricts={Array []}
-    selectedCards={Array []}
+    allDistricts={
+        Array [
+            Object {
+              "location": "COLORADO",
+              "stats": Object {
+                "2007": 0.111,
+              },
+            },
+          ]
+    }
+    selectDistrict={[Function]}
+    selectedCards={
+        Array [
+            Object {
+              "location": "COLORADO",
+              "stats": Object {
+                "2007": 0.111,
+              },
+            },
+          ]
+    }
+    unselect={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,11 +40,45 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [],
+      "children": Array [
+        <Card
+          district={
+                    Object {
+                              "location": "COLORADO",
+                              "stats": Object {
+                                "2007": 0.111,
+                              },
+                            }
+          }
+          selectDistrict={[Function]}
+          selected={true}
+          unselect={[Function]}
+/>,
+      ],
       "className": "card-container",
     },
     "ref": null,
-    "rendered": Array [],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "COLORADO",
+        "nodeType": "function",
+        "props": Object {
+          "district": Object {
+            "location": "COLORADO",
+            "stats": Object {
+              "2007": 0.111,
+            },
+          },
+          "selectDistrict": [Function],
+          "selected": true,
+          "unselect": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -33,11 +87,45 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [],
+        "children": Array [
+          <Card
+            district={
+                        Object {
+                                    "location": "COLORADO",
+                                    "stats": Object {
+                                      "2007": 0.111,
+                                    },
+                                  }
+            }
+            selectDistrict={[Function]}
+            selected={true}
+            unselect={[Function]}
+/>,
+        ],
         "className": "card-container",
       },
       "ref": null,
-      "rendered": Array [],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "COLORADO",
+          "nodeType": "function",
+          "props": Object {
+            "district": Object {
+              "location": "COLORADO",
+              "stats": Object {
+                "2007": 0.111,
+              },
+            },
+            "selectDistrict": [Function],
+            "selected": true,
+            "unselect": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

@@ -27,6 +27,7 @@ class App extends Component {
     const cards = this.state.selectedCards;
     const selected = this.districtRepo.findByName(district);
     let isDuplicate = false;
+    
     cards.forEach(card => {
       if ( card.location === selected.location) { isDuplicate = true; }
     });

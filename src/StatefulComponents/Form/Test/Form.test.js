@@ -112,11 +112,66 @@ describe('', ()=>{
   })
 
   it('should reset the state.value to empty string', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(
+      <Form 
+        selectDistrict={spy}
+        findFromSearch={jest.fn()}
+        allDistricts={jest.fn()}
+      />)
+    wrapper.setState({
+      value: "COLORADO"
+    })
+    const mockEvent = {
+      preventDefault: jest.fn(),
+      target: {value: 'COLORADO'}
+    };
 
+    wrapper.find('form').simulate('submit', mockEvent);
+
+    expect(wrapper.state('value')).toEqual('');
   })
 
   it('should call findFromSearch with empty string onSubmit', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(
+      <Form 
+        selectDistrict={jest.fn()}
+        findFromSearch={spy}
+        allDistricts={jest.fn()}
+      />)
+    wrapper.setState({
+      value: "COLORADO"
+    })
+    const mockEvent = {
+      preventDefault: jest.fn(),
+      target: {value: 'COLORADO'}
+    };
 
+    wrapper.find('form').simulate('submit', mockEvent);
+
+    expect(spy).toHaveBeenCalledWith('');
+  })
+
+  it('should return undefined if there is no value in state', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(
+      <Form 
+        selectDistrict={jest.fn()}
+        findFromSearch={spy}
+        allDistricts={jest.fn()}
+      />)
+    wrapper.setState({
+      value: ""
+    })
+    const mockEvent = {
+      preventDefault: jest.fn(),
+      target: {value: 'COLORADO'}
+    };
+
+    wrapper.find('form').simulate('submit', mockEvent);
+
+    expect(spy).not.toHaveBeenCalled();
   })
 
 });

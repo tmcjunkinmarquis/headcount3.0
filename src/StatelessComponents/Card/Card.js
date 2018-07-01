@@ -18,14 +18,12 @@ const Card = (props) => {
     })
   }
 
-  const toggleSelected = (e) => {
-  
+  const toggleSelected = () => {
     if(props.selected) { 
       props.unselect(props.district.location);
-      
-      return;
-    };
-    props.selectDistrict(props.district.location);
+    } else {
+      props.selectDistrict(props.district.location);
+    }
   }
 
   return(

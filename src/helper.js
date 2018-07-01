@@ -4,37 +4,34 @@ export default class DistrictRepository {
   constructor(){
     this.stats = this.dataCleaner(kinderData);
   }
-  dataCleaner = (data) => {
-    return data.reduce((obj, yearObj) => {
+  dataCleaner = (rawData) => {
+    return rawData.reduce((dataSet, yearObj) => {
       let key = yearObj.Location.toUpperCase();
       let year = yearObj.TimeFrame;
-      let data = Math.round(yearObj.Data * 1000)/1000 || 0;
-      if (!obj[key]) {
-        obj[key] = {location: key,
+      let rawData = Math.round(yearObj.Data * 1000)/1000 || 0;
+      
+      if (!dataSet[key]) {
+        dataSet[key] = {location: key,
           stats: {}};
       }
-      obj[key].stats[year] = data;
-      return obj;
+      dataSet[key].stats[year] = rawData;
+      return dataSet;
     }, {});
-
   }
+
   findByName = (name) => {
     if (!name) { return undefined; }
     if (this.stats[name.toUpperCase()]) {
       return this.stats[name.toUpperCase()];
     } 
   }
+
   findAllMatches = (county = '')=>{
     const valuesArray = Object.values(this.stats);
-    
+ 
     return valuesArray.filter((value)=>{
       return value.location.startsWith(county.toUpperCase());
     });
-
-    // return valuesArray.filter((value) => {
-    //   const regex = new RegExp(county.toUpperCase())
-    //   return value.location.match(regex);
-    // });
   }
 
   findAverage = (district) => {
@@ -51,10 +48,9 @@ export default class DistrictRepository {
     const averageForA = this.findAverage(districtA.toUpperCase());
     const averageForB = this.findAverage(districtB.toUpperCase());
     const dividend = Math.round(averageForA / averageForB * 1000) /1000;
-    return { [districtA.toUpperCase()]: averageForA, [districtB.toUpperCase()]:averageForB, compared: dividend};
+    return { 
+      [districtA.toUpperCase()]: averageForA, 
+      [districtB.toUpperCase()]:averageForB, 
+      compared: dividend};
   }
-
-
-
-
 }

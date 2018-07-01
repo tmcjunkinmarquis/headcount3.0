@@ -13,9 +13,7 @@ const CardContainer = ({ allDistricts, selectDistrict, selectedCards, unselect }
     return selectedNames.includes(district.location)
   }
 
-
   const makeCards = (districts)=>{
-
     return districts.map((district)=>{
       return (
         <Card 

@@ -3,7 +3,11 @@ import Card from '../Card/Card';
 import './SelectedContainer.css';
 import PropTypes from 'prop-types';
 
-const SelectedContainer = ({ selectedCards, unselect, findAverage, compareDistrictAverages }) => {
+const SelectedContainer = ({ 
+  selectedCards, 
+  unselect, 
+  compareDistrictAverages }) => {
+  
   const showCards = (districts) => {
     return districts.map(district => (
       <Card 
@@ -40,11 +44,10 @@ const SelectedContainer = ({ selectedCards, unselect, findAverage, compareDistri
   );
 };
 
-SelectedContainer.proptypes = {
+SelectedContainer.propTypes = {
   unselect: PropTypes.func.isRequired,
   selectedCards: PropTypes.func.isRequired,
-  findAverage: PropTypes.func.isRequired,
   compareDistrictAverages: PropTypes.func.isRequired
-}
+};
 
 export default SelectedContainer;

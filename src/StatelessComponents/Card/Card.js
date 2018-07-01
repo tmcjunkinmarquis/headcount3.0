@@ -14,19 +14,19 @@ const Card = (props) => {
             {stats[year]}
           </span>
         </li>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const toggleSelected = () => {
-    if(props.selected) { 
+    if (props.selected) { 
       props.unselect(props.district.location);
     } else {
       props.selectDistrict(props.district.location);
     }
-  }
+  };
 
-  return(
+  return (
     <div 
       onClick={toggleSelected} 
       className={`card ${props.selected? "selected": ""}`}
@@ -36,15 +36,15 @@ const Card = (props) => {
         {generateList(props.district.stats)}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-Card.proptypes = {
+Card.propTypes = {
   district: PropTypes.object.isRequired,
   key: PropTypes.string.isRequired,
   selected: PropTypes.bool.isRequired,
   unselect: PropTypes.func.isRequired,
   selectDistrict: PropTypes.func.isRequired
-}
+};
 
 export default Card;

@@ -10,8 +10,8 @@ class Form extends Component {
     };
   }
 
-  handleChange = (e) => {
-    const value = e.target.value;
+  handleChange = (event) => {
+    const value = event.target.value;
     this.setState({
       value
     });
@@ -23,13 +23,16 @@ class Form extends Component {
     event.preventDefault();
     const value = this.state.value;
     const districts = this.props.allDistricts;
-    if(!districts.length || !value) {
-      return
+    if (!districts.length || !value) {
+      return;
     } else if (districts.length === 1) {
       this.props.selectDistrict(districts[0].location);
       this.props.findFromSearch('');
-      return
-    } else if (districts.filter(district => district.location === value.toUpperCase()).length) {
+      return;
+    } else if (
+      districts.filter(district => {
+        district.location === value.toUpperCase(); 
+      }).length) {
       this.props.selectDistrict(value);
       this.setState({value: ''});
       this.props.findFromSearch(''); 
@@ -52,10 +55,10 @@ class Form extends Component {
   }
 }
 
-Form.proptypes = {
+Form.propTypes = {
   selectDistrict: PropTypes.func.isRequired,
   findFromSearch: PropTypes.func.isRequired,
   allDistricts: PropTypes.array.isRequired
-}
+};
 
 export default Form;

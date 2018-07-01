@@ -20,13 +20,16 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if(!this.props.allDistricts.length || !this.state.value) {
+    const value = this.state.value;
+    const districts = this.props.allDistricts;
+    if(!districts.length || !value) {
       return
-    } else if (this.props.allDistricts.length === 1) {
-      this.props.selectDistrict(this.props.allDistricts[0].location);
+    } else if (districts.length === 1) {
+      this.props.selectDistrict(districts[0].location);
+      this.props.findFromSearch('');
       return
-    } else if (this.props.findFromSearch(this.state.value)) {
-      this.props.selectDistrict(this.state.value);
+    } else if (districts.filter(district => district.location === value.toUpperCase()).length) {
+      this.props.selectDistrict(value);
       this.setState({value: ''});
       this.props.findFromSearch(''); 
     }

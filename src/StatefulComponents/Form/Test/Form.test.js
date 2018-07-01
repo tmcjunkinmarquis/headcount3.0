@@ -22,8 +22,7 @@ describe('', ()=>{
     const mockState = {
       value: ''
     };
-    //execution
-    //expectation
+   
     expect(wrapper.instance().state).toEqual(mockState);
   });
 
@@ -68,13 +67,13 @@ describe('', ()=>{
 
   });
 
-  it('should call selectDistrict when handleSubmit is executed', () => {
+  it('should call selectDistrict when handleSubmit is executed and the this.state.value is not empty', () => {
    const spy = jest.fn();
    const wrapper = shallow(
      <Form 
        selectDistrict={spy}
-       findFromSearch={jest.fn()}
-       allDistricts={jest.fn()}
+       findFromSearch={() => true}
+       allDistricts={[{location: "COLORADO"}, {location: "AGATE 20"}]}
      />)
    wrapper.setState({
      value: "COLORADO"
@@ -95,15 +94,14 @@ describe('', ()=>{
     const wrapper = shallow(
       <Form 
         selectDistrict={spy}
-        findFromSearch={jest.fn()}
-        allDistricts={jest.fn()}
+        findFromSearch={() => true}
+        allDistricts={[{location: "COLORADO"}, {location: "AGATE 20"}]}
       />)
     wrapper.setState({
       value: "COLORADO"
     })
     const mockEvent = {
-      preventDefault: jest.fn(),
-      target: {value: 'COLORADO'}
+      preventDefault: jest.fn()
     };
 
     wrapper.find('form').simulate('submit', mockEvent);
@@ -116,15 +114,14 @@ describe('', ()=>{
     const wrapper = shallow(
       <Form 
         selectDistrict={spy}
-        findFromSearch={jest.fn()}
-        allDistricts={jest.fn()}
+        findFromSearch={() => true}
+        allDistricts={[{location: "COLORADO"}, {location: "AGATE 20"}]}
       />)
     wrapper.setState({
       value: "COLORADO"
     })
     const mockEvent = {
-      preventDefault: jest.fn(),
-      target: {value: 'COLORADO'}
+      preventDefault: jest.fn()
     };
 
     wrapper.find('form').simulate('submit', mockEvent);
@@ -138,35 +135,30 @@ describe('', ()=>{
       <Form 
         selectDistrict={jest.fn()}
         findFromSearch={spy}
-        allDistricts={jest.fn()}
+        allDistricts={[{location: "COLORADO"}, {location: "AGATE 20"}]}
       />)
     wrapper.setState({
       value: "COLORADO"
     })
     const mockEvent = {
-      preventDefault: jest.fn(),
-      target: {value: 'COLORADO'}
+      preventDefault: jest.fn()
     };
 
     wrapper.find('form').simulate('submit', mockEvent);
 
-    expect(spy).toHaveBeenCalledWith('');
+    expect(spy).toHaveBeenLastCalledWith('');
   })
 
-  it('should return undefined if there is no value in state', () => {
+  it('should not call selectDistrict if there is no value in state', () => {
     const spy = jest.fn();
     const wrapper = shallow(
       <Form 
         selectDistrict={jest.fn()}
         findFromSearch={spy}
-        allDistricts={jest.fn()}
+        allDistricts={[{location: "COLORADO"}, {location: "AGATE 20"}]}
       />)
-    wrapper.setState({
-      value: ""
-    })
     const mockEvent = {
-      preventDefault: jest.fn(),
-      target: {value: 'COLORADO'}
+      preventDefault: jest.fn()
     };
 
     wrapper.find('form').simulate('submit', mockEvent);
@@ -174,6 +166,47 @@ describe('', ()=>{
     expect(spy).not.toHaveBeenCalled();
   })
 
+  it('should select remaining district if there is only one in allDistricts array', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(
+      <Form 
+        selectDistrict={spy}
+        findFromSearch={() => true}
+        allDistricts={[{location: "COLORADO"}]}
+      />)
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+
+    wrapper.setState({
+      value: "COLORADO"
+    })
+
+    wrapper.find('form').simulate('submit', mockEvent);
+
+    expect(spy).toHaveBeenCalledWith("COLORADO")
+  })
+
+  it('should not call selectDistrict if there are no matches in allDistricts', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(
+      <Form 
+        selectDistrict={spy}
+        findFromSearch={() => true}
+        allDistricts={[{location: "COLORADO"}, {location: "AGATE 20"}]}
+      />)
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+
+    wrapper.setState({
+      value: "Kentucky"
+    })
+
+    wrapper.find('form').simulate('submit', mockEvent);
+
+    expect(spy).not.toHaveBeenCalled()
+  })
 });
 
 

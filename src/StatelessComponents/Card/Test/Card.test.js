@@ -59,5 +59,18 @@ describe('Card', () => {
     expect(mockUnselect).toHaveBeenCalled();
   })
 
+  it('should add a class of low to list items with stats below .5', () => {
+    mockDistrict = {
+      location:'turing', 
+      stats:{2007: 0.313,
+             2008: 0.885}
+    }
+    wrapper = shallow(<Card district={mockDistrict}
+                      unselect={jest.fn()}
+                      selectDistrict={jest.fn()}
+                      selected={false}/>)
+
+    expect(wrapper.find('li.low').length).toEqual(1);
+  })
   
 })

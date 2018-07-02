@@ -29,7 +29,9 @@ class App extends Component {
     let isDuplicate = false;
     
     cards.forEach(card => {
-      if ( card.location === selected.location) { isDuplicate = true; }
+      if ( card.location === selected.location) { 
+        isDuplicate = true; 
+      }
     });
 
     if (isDuplicate) { 

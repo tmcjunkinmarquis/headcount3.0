@@ -3,7 +3,8 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 import './CardContainer.css';
 
-const CardContainer = ({ allDistricts, 
+const CardContainer = ({ 
+  allDistricts, 
   selectDistrict, 
   selectedCards, 
   unselect }) => {

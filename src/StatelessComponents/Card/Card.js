@@ -9,7 +9,8 @@ const Card = (props) => {
     return years.map(year => {
       let low = stats[year] < .5 ? 'low' : '';
       return (
-        <li className={low} key={year}> <span className="year">{year}</span>
+        <li className={low} key={year}> 
+          <span className="year">{year}</span>
           <span className="percent">
             {stats[year]}
           </span>

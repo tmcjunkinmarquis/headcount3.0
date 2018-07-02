@@ -39,7 +39,6 @@ ShallowWrapper {
           <li
                     className="low"
           >
-                     
                     <span
                               className="year"
                     >
@@ -79,7 +78,6 @@ ShallowWrapper {
             <li
               className="low"
 >
-               
               <span
                             className="year"
               >
@@ -101,7 +99,6 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                " ",
                 <span
                   className="year"
 >
@@ -117,7 +114,6 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              " ",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -167,7 +163,6 @@ ShallowWrapper {
             <li
                         className="low"
             >
-                         
                         <span
                                     className="year"
                         >
@@ -207,7 +202,6 @@ ShallowWrapper {
               <li
                 className="low"
 >
-                 
                 <span
                                 className="year"
                 >
@@ -229,7 +223,6 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  " ",
                   <span
                     className="year"
 >
@@ -245,7 +238,6 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                " ",
                 Object {
                   "instance": null,
                   "key": undefined,

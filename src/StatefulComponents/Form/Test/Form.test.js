@@ -180,7 +180,7 @@ describe('', ()=>{
     };
 
     wrapper.setState({
-      value: "COLORADO"
+      value: "COLO"
     })
 
     wrapper.find('form').simulate('submit', mockEvent);

@@ -7,8 +7,10 @@ import Card from '../../Card/Card';
 describe('CardContainer', () => {
   let wrapper = shallow(
     <CardContainer 
-      allDistricts={[]}
-      selectedCards={[]}
+      allDistricts={[{ location: 'COLORADO', stats: { 2007: 0.111 } }]}
+      selectedCards={[{ location: 'COLORADO', stats: { 2007: 0.111 } }]}
+      selectDistrict={jest.fn()}
+      unselect={jest.fn()}
     />);
   
   it('should match the snapshot', () => {

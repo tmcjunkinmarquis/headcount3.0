@@ -2924,7 +2924,6 @@ ShallowWrapper {
 />,
         <SelectedContainer
           compareDistrictAverages={[Function]}
-          findAverage={[Function]}
           selectedCards={Array []}
           unselect={[Function]}
 />,
@@ -8754,7 +8753,6 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "compareDistrictAverages": [Function],
-          "findAverage": [Function],
           "selectedCards": Array [],
           "unselect": [Function],
         },
@@ -14590,7 +14588,6 @@ ShallowWrapper {
 />,
           <SelectedContainer
             compareDistrictAverages={[Function]}
-            findAverage={[Function]}
             selectedCards={Array []}
             unselect={[Function]}
 />,
@@ -20420,7 +20417,6 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "compareDistrictAverages": [Function],
-            "findAverage": [Function],
             "selectedCards": Array [],
             "unselect": [Function],
           },
